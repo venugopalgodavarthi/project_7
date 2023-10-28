@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load custom %}
+    <style>
+        .table1 {
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: auto;
+            width: 50%;
+
+        }
+
+        th {
+            text-align: center;
+            background-color: bisque;
+            color: #000;
+        }
+
+        td {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1></h1>
+    </div>
+    <div class="table1">
+        <table>
+            <tr>
+                <th>Product Id</th>
+                <th>Name</th>
+                <th>Desc</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Final Price</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{i.pid}}</td>
+                <td>{{i.pname}}</td>
+                <td>{{i.desc}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.discount}}</td>
+                <td>{{i.price|sub:i.discount}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product {
+            margin: auto;
+            width: 50%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: medium;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product">
+        <h1>Product Registration</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_name">Product name</label>
+            <input type="text" name="name" id="id_name"><br><br>
+
+            <label for="id_desc">Product Desc</label>
+            <input type="text" name="desc" id="id_desc"><br><br>
+
+            <label for="id_price">Product Price</label>
+            <input type="text" name="price" id="id_price"><br><br>
+
+            <label for="id_discount">Product Discount</label>
+            <input type="text" name="discount" id="id_discount"><br><br>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</body>
+
+</html>

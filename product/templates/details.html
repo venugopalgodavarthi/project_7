@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load custom %}
+    <style>
+        .table1 {
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: auto;
+            width: 50%;
+
+        }
+
+        th {
+            text-align: center;
+            background-color: bisque;
+            color: #000;
+        }
+
+        td {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    {% if data == None %}
+    <div>
+        <h1> Product id {{id}} is not available </h1>
+    </div>
+    {% else %}
+    <div class="table1">
+        <table>
+            <tr>
+                <th>Product Id</th>
+                <th>Name</th>
+                <th>Desc</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Final Price</th>
+            </tr>
+            <tr>
+                <td>{{data.pid}}</td>
+                <td>{{data.pname}}</td>
+                <td>{{data.desc}}</td>
+                <td>{{data.price}}</td>
+                <td>{{data.discount}}</td>
+                <td>{{data.price|sub:data.discount}}</td>
+            </tr>
+        </table>
+    </div>
+    {% endif %}
+</body>
+
+</html>
